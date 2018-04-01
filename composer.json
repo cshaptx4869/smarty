@@ -1,0 +1,19 @@
+{
+    "name": "cshaptx4869/smarty",
+    "description": "use smarty3",
+    "authors": [
+        {
+            "name": "cshaptx4869",
+            "email": "994774638@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload":{
+        "classmap":[
+            "smarty/Smarty.class.php",
+            "class/mysql.class.php"
+        ]
+    }
+}

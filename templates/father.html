@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}我是父级{/block}</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {include file="public/header.html"}
+        {block name="content1"}我是父级的内容1{/block} <br>
+        {block name="content2"}我是父级的内容2{/block} <br>
+        {block name="content3"}我是父级的内容3{$smarty.block.child}{/block} <br>
+        {block name="content4"}我是父级的内容4{/block}
+    </div>
+</body>
+</html>

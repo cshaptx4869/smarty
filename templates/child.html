@@ -1,0 +1,6 @@
+{extends file="father.html"}
+{block name="title"}我是子标题{/block}
+{block name="content1" prepend}我是子内容1 prepend 在父模板前添加内容{/block}
+{block name="content2" append}我是子内容2 append 在父模板后添加内容{/block}
+{block name="content3"}$smarty.block.child占位符 我是子内容3{/block}
+{block name="content4"}我是子内容4{$smarty.block.parent} $smarty.block.parent 占位符{/block}

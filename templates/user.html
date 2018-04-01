@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {include file="public/header.html"}
+        {*加载配置文件*}
+        {config_load file='smarty.conf' section="appear"}
+        <p>
+            我是{#name#},今年{#age#}岁,身高{#height#},我的座右铭是"{$motto}" <br>
+            {'come on'|upper} <br>
+            {'今天我上街,看见一个人,脸上的痘痘数也数不清,大的像黄豆,小的像芝麻,最小的最小的还有二郎豆'|truncate:20:'...':true} <br>
+            {'abcdefghijklmnopqrstuvwxyz'|truncate:20:'...':true:true} <br>
+            {say()} <br>
+            {nocache}
+            {date('Y-m-d H:i:s')}
+            {/nocache}
+            坐标:{getSelect('上海')}{myselect data=$cities selected="北京"} {radio data=$play checked='约' name='play'}<br>
+            {'2018-12-12'|mystrtotime}
+            胡言乱语:{'abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+'|str_shuffle} <br>
+            {repeat_words size="20" color='#71C58E' num="5"}
+                浪起来,浪起来...
+            {/repeat_words}
+        </p>
+    </div>
+</body>
+</html>
