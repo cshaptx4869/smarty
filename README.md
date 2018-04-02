@@ -1,2 +1,2 @@
 # smarty
-smarty3.1.30的使用
+smarty3.1.30 + memcache的使用
