@@ -4,6 +4,7 @@
     include_once ROOT.'/vendor/autoload.php';
     $smarty = new Smarty();
     $db = MySQL::getObj('127.0.0.1','root','123456','labexam');
+    $mem = new Memcache();
 
     $smarty ->setTemplateDir(ROOT.'/templates/')
             ->setCompileDir(ROOT.'/templates_c/')
