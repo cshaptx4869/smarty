@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>memcache</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {include file="public/header.html"}
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>院系</th>
+                <th>专业名</th>
+                <th>考生身份</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $kaosheng as $v}
+            <tr>
+                <td>{$v.xuehao}</td>
+                <td>{$v.xingming}</td>
+                <td>{$v.yuanxi}</td>
+                <td>{$v.zhuanyem}</td>
+                <td>{$v.kaoshengsf}</td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
