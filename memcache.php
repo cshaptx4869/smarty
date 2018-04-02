@@ -14,3 +14,4 @@
     $smarty->assign('kaosheng',$data);
     $smarty->display('kaosheng.html');
 
+    $mem->close();
