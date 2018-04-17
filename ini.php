@@ -39,5 +39,15 @@
     // 将php的strtotime()函数映射到Smarty调节器中
     $smarty->registerPlugin("modifier","mystrtotime", "strtotime");
 
-
+    // 提示
+    function reload_js($msg = NULL, $url = NULL){
+        $url = 'window.location.href="'.$url.'";';
+        print '<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+        print '<script type="text/javascript">';
+        if ($msg)
+            printf('alert("%s");',str_replace(array("\\", "\"", "\r\n", "\r", "\n"), array("\\\\", "\\\"", "\\n", "\\n", "\\n"), $msg));
+        print $url;
+        print '</script></head></html>';
+        exit;
+    }
 

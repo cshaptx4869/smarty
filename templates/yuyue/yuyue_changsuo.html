@@ -1,0 +1,24 @@
+{extends file="yuyue/common.html"}
+{block name="title"}场所设置{/block}
+{block name="content"}
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr class="">
+        <th>编号</th>
+        <th>名称</th>
+        <th>上移</th>
+        <th>下移</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    {foreach $room as $val}
+    <tr>
+        <td>{$val.id}</td>
+        <td>{$val.title}</td>
+        <td align="center"><a href=""><span class="glyphicon glyphicon-arrow-up"></span></a></td>
+        <td align="center"><a href=""><span class="glyphicon glyphicon-arrow-down"></span></a></td>
+        <td align="center"><a href="yuyue.php?cmd=changsuo_del&id={$val.id}" onclick="return confirm('确认要删除吗？')"><span class="glyphicon glyphicon-remove" style="color:red;"></span></a></td>
+    </tr>
+    {/foreach}
+</table>
+{/block}

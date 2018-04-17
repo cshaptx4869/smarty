@@ -1,0 +1,27 @@
+{extends file="yuyue/common.html"}
+{block name="title"}时间段设置{/block}
+{block name="content"}
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr class="">
+        <th>编号</th>
+        <th>名称</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    {foreach $time as $val}
+    <tr>
+        <td>{$val.id}</td>
+        <td>{$val.title}</td>
+        <td>{$val.sd_start}</td>
+        <td>{$val.sd_end}</td>
+        <td align="center">
+            <a href="yuyue.php?cmd=shijianduan_edit&id={$val.id}"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;&nbsp;|&nbsp;
+            <a href="yuyue.php?cmd=shijianduan_del&id={$val.id}" onclick="return confirm('确认要删除吗？')"><span class="glyphicon glyphicon-remove" style="color:red;"></span></a>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+{/block}

@@ -1,0 +1,28 @@
+{extends file="yuyue/common.html"}
+{block name="title"}预约列表{/block}
+{block name="content"}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr class="">
+            <th>编号</th>
+            <th>场所名</th>
+            <th>日期</th>
+            <th>时间段</th>
+            <th>状态</th>
+            <th>主题</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    {foreach $arrange as $val}
+        <tr>
+            <td>{$val.id}</td>
+            <td>{$val.rooms}</td>
+            <td>{$val.dt|date_format:'%Y-%m-%d'}</td>
+            <td>{$val.datesector}</td>
+            <td>{if $val.published == 1}通过{else if $val.published == 2}未通过{else if $val.published == 3}待审核{/if}</td>
+            <td>{$val.topic}</td>
+            <td align="center"><a href="yuyue.php?cmd=liebiao_del&id={$val.id}" onclick="return confirm('确认要删除吗？')"><span class="glyphicon glyphicon-remove" style="color:red;"></span></a></td>
+        </tr>
+    {/foreach}
+</table>
+{/block}

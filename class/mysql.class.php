@@ -158,14 +158,22 @@ class MySQL{
 
     //查询一条数据
     function fetchOne($tbname,$config=array()){
-        //news 表中查询一条记录
+        //查询一条记录
         $query = $this->buildQuery($tbname,$config);
 
         $result = mysqli_query($this->link,$query);
         //从结果集中获取数据
-        var_dump($this->fetchStyle);
         //MYSQLI_BOTH,MYSQLI_ASSOC,MYSQLI_NUM
         return mysqli_fetch_array($result,$this->fetchStyle);
+    }
+
+    // 原生sql查询
+    function query($sql=''){
+        if(empty($sql)){
+            exit;
+        }
+        $result = mysqli_query($this->link,$sql);
+        return mysqli_fetch_all($result,$this->fetchStyle);
     }
 
     function __destruct(){

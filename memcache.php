@@ -12,7 +12,7 @@
     }else{
         $data = $mem->get('kaosheng');
     }
-
+    //$mem->delete('kaosheng');
     $smarty->assign('kaosheng',$data);
     $smarty->display('kaosheng.html');
 
