@@ -8,9 +8,6 @@
     <table border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td width="30"><div class="day_verify">&nbsp;</div></td>
-            <td width="80">&nbsp;未预约 </td>
-            <td width="50" bgcolor="#F5F5F5">&nbsp;</td>
-            <td width="30"><div class="day_verify">&nbsp;</div></td>
             <td width="80">&nbsp;待审核 </td>
             <td width="50" bgcolor="#FEE58F">&nbsp;</td>
             <td width="30" ><div class="day_used">&nbsp;</div></td>
@@ -24,7 +21,7 @@
     [<a href="yuyue.php" class="yxbs1">本周</a>]
     [<a href="yuyue.php?offset={$offset_next}" class="yxbs1">下一周</a>]
 </p>
-<table class="table table-bordered">
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th colspan="2" class="text-center">场所</th>
@@ -36,16 +33,12 @@
         </tr>
     </thead>
     {foreach $weekdays as $weekday}
-    {assign var=i value=0}
         <tr>
+            <td rowspan="{$datesectors|@count+1}" align="center">
+                {$weekday|date_format:"%Y-%m-%d"} <br>星期{$weekday|date_format:"%w"|trans_week}
+            </td>
             {foreach $datesectors as $datesector_id => $time}
             <tr>
-                {if $i==0}
-                <td rowspan="{$datesectors|@count}" align="center">
-                    {$weekday|date_format:"%Y-%m-%d"} <br>星期{$weekday|date_format:"%w"|trans_week}
-                </td>
-                {/if}
-                {assign var=i value=1}
                 <td>{$time}</td>
                 {foreach $rooms as $room}
                 {assign var=room_id value=$room.id}

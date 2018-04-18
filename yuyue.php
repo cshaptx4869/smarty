@@ -180,7 +180,7 @@
             case 0:
             case 2:
             default:
-                $bgcolor = '';
+                $bgcolor = 'bgcolor = "#F5F5F5"';
                 break;
         }
         return $bgcolor;
