@@ -2,6 +2,7 @@
     header('content-type:text/html;charset=utf8');
     define('ROOT',dirname(__FILE__));
     error_reporting(E_ALL ^ E_NOTICE);
+    date_default_timezone_set('PRC');
     include_once ROOT.'/vendor/autoload.php';
     $smarty = new Smarty();
     $db = MySQL::getObj('127.0.0.1','root','123456','labexam');

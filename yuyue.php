@@ -44,7 +44,7 @@
             }
         }
         $smarty->assign('arrangements', $arrangements_arr);
-        //print_r($arrangements1);die;
+        //print_r($arrangements_arr);die;
 
         /* get datesectors */
         $datesectors = get_datesectors();
@@ -207,6 +207,9 @@
             unset($_POST['cmd']);
             unset($_POST['postflag']);
             $_POST['published'] = 3;
+            $_POST['tm'] = $_POST['sd_start'].'-'.$_POST['sd_end'];
+            unset($_POST['sd_start']);
+            unset($_POST['sd_end']);
             $res = $db->insert('tblroom_arrangement',$_POST);
             if ($res){
                 reload_js('提交申请成功！','yuyue.php?cmd=liebiao');
