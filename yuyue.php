@@ -7,14 +7,13 @@
     define('STATUS_GUO', 1);
     define('STATUS_WEI', 2);
     define('STATUS_DAI' , 3);
-
+    // 根据cmd 调用方法
     $cmd = !empty($_REQUEST['cmd'])?$_REQUEST['cmd']:'yuyue';
     $func = 'handle_' . $cmd . '_cmd';
     call_user_func($func);
     // 1.预约
     function handle_yuyue_cmd(){
         global $smarty;
-        //$smarty->caching = 10;
         //echo '<pre>';
         // 获得所有的房间
         $rooms = get_rooms_all();
@@ -38,13 +37,13 @@
         $smarty->assign('arrangements_class',$arrangements_class);
         //print_r($arrangements_class);die;
 
-        $arrangements1 = array();
+        $arrangements_arr = array();
         foreach( $arrangements as $r){
             if($r['published'] == STATUS_GUO || $r['published'] == STATUS_DAI) {
-                $arrangements1[$r['dt']][$r['room_id']][$r['datesector_id']][]  = $r;
+                $arrangements_arr[$r['dt']][$r['room_id']][$r['datesector_id']][]  = $r;
             }
         }
-        $smarty->assign('arrangements', $arrangements1);
+        $smarty->assign('arrangements', $arrangements_arr);
         //print_r($arrangements1);die;
 
         /* get datesectors */
@@ -109,9 +108,6 @@
     // 时间段内场地的预约信息，包含待审核及已审核的 。如果参数为0，则查找全部场地信息
     function get_arrangements($starttime='',$endtime = '',$room_id = 0,$datesector_id = '',$published = '', $uid = ''){
         global 	$db;
-        //print date('Y-m-d H:i:s',$starttime);
-        //print "start:".date('Y-m-d',$starttime)." - end: ". date('Y-m-d',$endtime);
-        //print date('Y-m-d',1355673600);
 
         $sql = 'select  a.*, b.title as room, b.contact as room_address, c.title as datesector 
                 from tblroom_arrangement a, tblroom_rooms b, tblroom_datesector c
@@ -171,9 +167,6 @@
 
     // 样式
     function get_arrange_class_name($status){
-        if( empty($status) ){
-            return ;
-        }
         switch( $status ){
             // 通过
             case 1:

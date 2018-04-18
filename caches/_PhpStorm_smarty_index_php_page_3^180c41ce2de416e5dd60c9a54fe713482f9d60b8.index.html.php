@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-18 15:21:00
+/* Smarty version 3.1.30, created on 2018-04-18 15:16:35
   from "E:\wamp\www\PhpStorm\smarty\templates\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ad6f1dcf0c064_76721171',
+  'unifunc' => 'content_5ad6f0d3299612_71643807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 300,
 ),true)) {
-function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ad6f0d3299612_71643807 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -59,33 +59,6 @@ function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl)
                 </tr>
             </thead>
             <tbody>
-                                <tr>
-                    <td>2590</td>
-                    <td>常用安全标识</td>
-                    <td> 
-     
-         
-             &nbsp;  
-             &nbsp;  
-             &nbsp;...</td>
-                    <td>74</td>
-                    <td>2013-09-25 15:53:36</td>
-                </tr>
-                                <tr>
-                    <td>2601</td>
-                    <td>干粉灭火器原理、特点及适用范围</td>
-                    <td> &nbsp; &nbsp;...</td>
-                    <td>4</td>
-                    <td>2013-09-26 08:42:52</td>
-                </tr>
-                                <tr>
-                    <td>2604</td>
-                    <td>一氧化碳中毒的急救措施</td>
-                    <td> &nbsp; &nbsp; 煤气中毒实际上就是一氧化碳（CO）中毒。煤气中毒后，切不可慌张。在送医院前可采取一些自救措施，并一定要让中毒者充分吸氧，并注意呼吸道的畅通。 
- &nbsp;...</td>
-                    <td>3</td>
-                    <td>2013-09-26 08:44:56</td>
-                </tr>
                                 <tr>
                     <td>2606</td>
                     <td>遭毒蛇咬伤后的急救措施</td>
@@ -141,12 +114,39 @@ function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl)
                     <td>3</td>
                     <td>2013-09-26 08:49:33</td>
                 </tr>
+                                <tr>
+                    <td>2620</td>
+                    <td>用电安全常识</td>
+                    <td> &nbsp; 
+   电压常识：  
+ &nbsp; &nbsp;...</td>
+                    <td>4</td>
+                    <td>2013-09-26 08:50:43</td>
+                </tr>
+                                <tr>
+                    <td>2622</td>
+                    <td>实验室废液的处理方法</td>
+                    <td>   一、废液处理   
+ 
+&nbsp; &nbsp; 所谓废水处理就是将污水经过处理达到容许排放标准后，排入下水道。目前，污水处理的方法一般有两种： 
+ 
+&nbsp; &nbsp;...</td>
+                    <td>2</td>
+                    <td>2013-09-26 08:51:10</td>
+                </tr>
+                                <tr>
+                    <td>2624</td>
+                    <td>处理过氧化物过程中的危险性分析与事故预防</td>
+                    <td> &nbsp;&nbsp;&nbsp; 过氧化物在工业生产和人们生活中起着显著的作用，在高分子化学、精细化工、纺织印染、食品加工、家具制造等领域作为固化剂、催化剂、漂白剂、除臭...</td>
+                    <td>3</td>
+                    <td>2013-09-26 08:52:00</td>
+                </tr>
                 
                 <tr>
                     <td colspan="5">
                         <a href="index.php">首页</a>
-                         上一页
-                                                                        <a href="index.php?page=1">下一页</a>
+                                                <a href="index.php?page=2">上一页</a>
+                                                                        <a href="index.php?page=4">下一页</a>
                                                 <a href="index.php?page=19">尾页</a>
                     </td>
                 </tr>

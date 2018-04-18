@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-18 15:21:00
+/* Smarty version 3.1.30, created on 2018-04-18 15:16:33
   from "E:\wamp\www\PhpStorm\smarty\templates\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ad6f1dcf0c064_76721171',
+  'unifunc' => 'content_5ad6f0d1a26b71_42863907',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 300,
 ),true)) {
-function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ad6f0d1a26b71_42863907 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -59,25 +59,6 @@ function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl)
                 </tr>
             </thead>
             <tbody>
-                                <tr>
-                    <td>2590</td>
-                    <td>常用安全标识</td>
-                    <td> 
-     
-         
-             &nbsp;  
-             &nbsp;  
-             &nbsp;...</td>
-                    <td>74</td>
-                    <td>2013-09-25 15:53:36</td>
-                </tr>
-                                <tr>
-                    <td>2601</td>
-                    <td>干粉灭火器原理、特点及适用范围</td>
-                    <td> &nbsp; &nbsp;...</td>
-                    <td>4</td>
-                    <td>2013-09-26 08:42:52</td>
-                </tr>
                                 <tr>
                     <td>2604</td>
                     <td>一氧化碳中毒的急救措施</td>
@@ -141,12 +122,32 @@ function content_5ad6f1dcf0c064_76721171 (Smarty_Internal_Template $_smarty_tpl)
                     <td>3</td>
                     <td>2013-09-26 08:49:33</td>
                 </tr>
+                                <tr>
+                    <td>2620</td>
+                    <td>用电安全常识</td>
+                    <td> &nbsp; 
+   电压常识：  
+ &nbsp; &nbsp;...</td>
+                    <td>4</td>
+                    <td>2013-09-26 08:50:43</td>
+                </tr>
+                                <tr>
+                    <td>2622</td>
+                    <td>实验室废液的处理方法</td>
+                    <td>   一、废液处理   
+ 
+&nbsp; &nbsp; 所谓废水处理就是将污水经过处理达到容许排放标准后，排入下水道。目前，污水处理的方法一般有两种： 
+ 
+&nbsp; &nbsp;...</td>
+                    <td>2</td>
+                    <td>2013-09-26 08:51:10</td>
+                </tr>
                 
                 <tr>
                     <td colspan="5">
                         <a href="index.php">首页</a>
-                         上一页
-                                                                        <a href="index.php?page=1">下一页</a>
+                                                <a href="index.php?page=1">上一页</a>
+                                                                        <a href="index.php?page=3">下一页</a>
                                                 <a href="index.php?page=19">尾页</a>
                     </td>
                 </tr>
