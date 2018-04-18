@@ -1,3 +1,80 @@
 {extends file="yuyue/common.html"}
 {block name="title"}预约{/block}
-{block name="content"}{/block}
+{block name="content"}
+{assign var=offset_prev value=$week_period.start-86400}
+{assign var=offset_next value=$week_period.end+86400}
+<div >
+    <p style='padding:5px 0px'>★提示：需提前一天预约</p>
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="30"><div class="day_verify">&nbsp;</div></td>
+            <td width="80">&nbsp;待审核 </td>
+            <td width="50" bgcolor="#FEE58F">&nbsp;</td>
+            <td width="30" ><div class="day_used">&nbsp;</div></td>
+            <td width="80">&nbsp;已预订</td>
+            <td width="50" bgcolor="#89D6FF">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<p class="text-center">
+    [<a href="yuyue.php?offset={$offset_prev}" class="yxbs1">上一周</a>]
+    [<a href="yuyue.php" class="yxbs1">本周</a>]
+    [<a href="yuyue.php?offset={$offset_next}" class="yxbs1">下一周</a>]
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">场所</th>
+            {foreach from=$rooms item=room}
+            <th style="line-height:160%">
+                {$room.title}<br /><span style="font-weight:normal">（容量：{$room.max_number}人）</span>
+            </th>
+            {/foreach}
+        </tr>
+    </thead>
+    {foreach $weekdays as $weekday}
+        <tr>
+            <td rowspan="{$datesectors|@count+1}" align="center">
+                {$weekday|date_format:"%Y-%m-%d"} <br>星期{$weekday|date_format:"%w"|trans_week}
+            </td>
+            {foreach $datesectors as $datesector_id => $time}
+            <tr>
+                <td>{$time}</td>
+                {foreach $rooms as $room}
+                {assign var=room_id value=$room.id}
+                <td {$arrangements_class.$weekday.$room_id.$datesector_id|get_arrange_class_name} {if $weekday > $smarty.now} onclick="arrange(this,{$weekday},{$room_id},{$datesector_id})" style="cursor:pointer;" {/if} >
+                    {if $arrangements[$weekday][$room_id][$datesector_id]}
+                        {foreach $arrangements[$weekday][$room_id][$datesector_id] as $arr}
+                            {$arr.organization}<br />{$arr.tm}<br />{$arr.topic}
+                        {/foreach}
+                    {/if}
+                </td>
+                {/foreach}
+            </tr>
+            {/foreach}
+        </tr>
+    {/foreach}
+    <tfoot>
+        <tr>
+            <th colspan="2">场所</th>
+            {foreach from=$rooms item=room}
+            <th style="line-height:160%">
+                {$room.title}<br /><span style="font-weight:normal">（容量：{$room.max_number}人）</span>
+            </th>
+            {/foreach}
+        </tr>
+    </tfoot>
+</table>
+<p class="text-center">
+    [<a href="yuyue.php?offset={$offset_prev}" class="yxbs1">上一周</a>]
+    [<a href="yuyue.php" class="yxbs1">本周</a>]
+    [<a href="yuyue.php?offset={$offset_next}" class="yxbs1">下一周</a>]
+</p>
+<script type="text/javascript">
+    {literal}
+    function arrange(obj, dt, room_id, datesector_id) {
+        window.open('yuyue.php?cmd=apply&dt=' + dt + '&room_id=' + room_id + '&datesector_id=' + datesector_id);
+    }
+    {/literal}
+</script>
+{/block}

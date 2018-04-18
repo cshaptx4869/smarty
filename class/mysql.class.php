@@ -176,6 +176,11 @@ class MySQL{
         return mysqli_fetch_all($result,$this->fetchStyle);
     }
 
+    // 添加引号
+    function quote($param){
+        return  '"'.$param.'"';
+    }
+
     function __destruct(){
         mysqli_close($this->link);
     }

@@ -1,6 +1,7 @@
 <?php
     header('content-type:text/html;charset=utf8');
     define('ROOT',dirname(__FILE__));
+    error_reporting(E_ALL ^ E_NOTICE);
     include_once ROOT.'/vendor/autoload.php';
     $smarty = new Smarty();
     $db = MySQL::getObj('127.0.0.1','root','123456','labexam');
@@ -41,6 +42,9 @@
 
     // 提示
     function reload_js($msg = NULL, $url = NULL){
+        if (empty($url)){
+            $url = 'yuyue.php';
+        }
         $url = 'window.location.href="'.$url.'";';
         print '<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
         print '<script type="text/javascript">';
