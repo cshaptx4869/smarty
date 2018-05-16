@@ -1,6 +1,5 @@
 <?php
     require_once 'ini.php';
-
     // 开启缓存
     $smarty -> cache_lifetime = 300;
     // 判断模板文件是否被缓存 (如果一个模板有多个实例 比如:分页 则传递第二个参数 指定缓存号)
